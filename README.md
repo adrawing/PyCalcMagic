@@ -1,0 +1,2 @@
+# PyCalcMagic
+Calculator in phyton
