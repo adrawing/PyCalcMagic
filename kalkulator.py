@@ -1,37 +1,45 @@
-def dodawanie(x, y):
-    return x + y
+# Funkcja dodawania
+def dodawanie(a, b):
+    return a + b
 
-def odejmowanie(x, y):
-    return x - y
+# Funkcja odejmowania
+def odejmowanie(a, b):
+    return a - b
 
-def mnozenie(x, y):
-    return x * y
+# Funkcja mnożenia
+def mnożenie(a, b):
+    return a * b
 
-def dzielenie(x, y):
-    if y != 0:
-        return x / y
+# Funkcja dzielenia
+def dzielenie(a, b):
+    if b == 0:
+        return "Nie można dzielić przez zero!"
     else:
-        return "Nie można dzielić przez zero"
+        return a / b
+
+# Funkcja główna
+def main():
+    print("Prosty kalkulator")
+
+    # Wprowadzenie danych
+    liczba1 = float(input("Podaj pierwszą liczbę: "))
+    operacja = input("Podaj operację (+, -, *, /): ")
+    liczba2 = float(input("Podaj drugą liczbę: "))
+
+    # Wybór operacji
+    if operacja == '+':
+        wynik = dodawanie(liczba1, liczba2)
+    elif operacja == '-':
+        wynik = odejmowanie(liczba1, liczba2)
+    elif operacja == '*':
+        wynik = mnożenie(liczba1, liczba2)
+    elif operacja == '/':
+        wynik = dzielenie(liczba1, liczba2)
+    else:
+        wynik = "Nieprawidłowa operacja!"
+
+    # Wyświetlenie wyniku
+    print("Wynik:", wynik)
 
 if __name__ == "__main__":
-    num1 = float(input("Podaj pierwszą liczbę: "))
-    num2 = float(input("Podaj drugą liczbę: "))
-
-    print("1. Dodawanie")
-    print("2. Odejmowanie")
-    print("3. Mnożenie")
-    print("4. Dzielenie")
-
-    choice = input("Wybierz operację (1, 2, 3, 4): ")
-
-    if choice in ('1', '2', '3', '4'):
-        if choice == '1':
-            print(f"{num1} + {num2} = {dodawanie(num1, num2)}")
-        elif choice == '2':
-            print(f"{num1} - {num2} = {odejmowanie(num1, num2)}")
-        elif choice == '3':
-            print(f"{num1} * {num2} = {mnozenie(num1, num2)}")
-        elif choice == '4':
-            print(f"{num1} / {num2} = {dzielenie(num1, num2)}")
-    else:
-        print("Nieprawidłowy wybór operacji")
+    main()
